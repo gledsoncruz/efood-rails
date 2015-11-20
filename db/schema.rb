@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20151120014156) do
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
+    t.integer  "user_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -76,10 +77,12 @@ ActiveRecord::Schema.define(version: 20151120014156) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["user_id"], name: "index_users_on_user_id", using: :btree
 
   add_foreign_key "items", "categories"
   add_foreign_key "items", "restaurants"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
   add_foreign_key "restaurants", "users"
+  add_foreign_key "users", "users"
 end

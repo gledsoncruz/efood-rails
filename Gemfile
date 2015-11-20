@@ -14,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 #gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
 gem 'bootstrap-sass'
+gem 'devise-bootstrap-views'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -42,6 +43,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'foreman'
 end
 
 group :development do
