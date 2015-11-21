@@ -1,0 +1,25 @@
+pt-BR:
+   layouts:
+      menus:
+         dashboard: Painel
+         restaurants: Restaurantes
+         items: items
+         categories: Categorias
+         users: Usuários
+   errors:
+      messages:
+         not_saved: Não foi possível salvar
+   activerecord:
+      errors:
+         models:
+            user:
+               attributes:
+                  email:
+                     blank:  não pode ficar em branco
+                  password:
+                     blank:  não pode ficar em branco
+   users:
+      show:
+         title: Usuário
+      index:
+         title: Lista de Usuários

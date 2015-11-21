@@ -18,6 +18,19 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+    errors:
+        messages:
+            not_saved: Not saved
+    activerecord:
+        errors:
+            models:
+                user:
+                    attributes:
+                        email:
+                            blank:  is required
+                        password:
+                            blank:  is required
+    users:
+      show:
+         users: User
