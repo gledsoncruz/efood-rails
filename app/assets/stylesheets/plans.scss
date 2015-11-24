@@ -1,19 +1,18 @@
-// Place all the styles related to the plans controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.panel.plans
+.plans .panel
 {
     text-align: center;
 }
-.panel.plans:hover { box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4), 0 1px 5px rgba(130, 130, 130, 0.35); }
-.panel-body.plans
+.plans .panel-primary {
+    border-color: #BEBEBE;
+}
+.plans .panel:hover { box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4), 0 1px 5px rgba(130, 130, 130, 0.35); }
+.plans .panel-body
 {
     padding: 0px;
     text-align: center;
 }
 
-.the-price
+.plans .the-price
 {
     background-color: rgba(220,220,220,.17);
     box-shadow: 0 1px 0 #dcdcdc, inset 0 1px 0 #fff;
@@ -21,20 +20,20 @@
     margin: 0;
 }
 
-.the-price h1
+.plans .the-price h1
 {
     line-height: 1em;
     padding: 0;
     margin: 0;
 }
 
-.subscript
+.plans .subscript
 {
     font-size: 25px;
 }
 
 /* CSS-only ribbon styles    */
-.cnrflash
+.plans .cnrflash
 {
     /*Position correctly within container*/
     position: absolute;
@@ -46,7 +45,7 @@
     height: 100px;
     border-radius: 3px 5px 3px 0;
 }
-.cnrflash-inner
+.plans .cnrflash-inner
 {
     /*Set position, make larger then            container and rotate 45 degrees*/
     position: absolute;
@@ -67,7 +66,7 @@
     background-color: #aa0101;
     box-shadow: 0 3px 3px 0 rgba(1,1,1,.5), 0 1px 0 0 rgba(1,1,1,.5), inset 0 -1px 8px 0 rgba(255,255,255,.3), inset 0 -1px 0 0 rgba(255,255,255,.2);
 }
-.cnrflash-inner:before, .cnrflash-inner:after
+.plans .cnrflash-inner:before, .cnrflash-inner:after
 {
     /*Use the border triangle trick to make                 it look like the ribbon wraps round it's                container*/
     content: " ";
@@ -78,19 +77,19 @@
     height: 0;
     border: 8px solid #800000;
 }
-.cnrflash-inner:before
+.plans .cnrflash-inner:before
 {
     left: 1px;
     border-bottom-color: transparent;
     border-right-color: transparent;
 }
-.cnrflash-inner:after
+.plans .cnrflash-inner:after
 {
     right: 0;
     border-bottom-color: transparent;
     border-left-color: transparent;
 }
-.cnrflash-label
+.plans .cnrflash-label
 {
     /*Make the label look nice*/
     position: absolute;

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  root 'dashboard#index'
+  root 'plans#view'
   scope "/admin" do
     resources :users
   end
