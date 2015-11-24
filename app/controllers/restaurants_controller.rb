@@ -4,7 +4,11 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
+    if current_user.admin?
+      @restaurants = Restaurant.all
+    else
+      @restaurants = current_user.restaurants
+    end
   end
 
   # GET /restaurants/1

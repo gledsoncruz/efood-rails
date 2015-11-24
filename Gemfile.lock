@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 58e857f417d3a1419ac85fd0b783f957b0c8c6f3
+  specs:
+    paperclip (4.3.1)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -48,6 +59,10 @@ GEM
       sass (>= 3.3.0)
     builder (3.2.2)
     byebug (8.2.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     debug_inspector (0.0.2)
     devise (3.5.2)
       bcrypt (~> 3.0)
@@ -77,6 +92,7 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.6.2)
+    mimemagic (0.3.0)
     mini_portile (0.6.2)
     minitest (5.8.3)
     multi_json (1.11.2)
@@ -84,6 +100,8 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    pundit (1.0.1)
+      activesupport (>= 3.0.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -164,7 +182,9 @@ DEPENDENCIES
   foreman
   jbuilder (~> 2.0)
   jquery-rails
+  paperclip!
   pg
+  pundit
   rails (= 4.2.4)
   rails_12factor
   sass-rails (~> 5.0)

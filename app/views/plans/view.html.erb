@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><%= t('.title') %></h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <% @plans.each do |plan| %>
+                    <div class="col-xs-4">
+                        <div class="panel panel-primary">
+                            <% if plan.recommended? %>
+                                <div class="cnrflash">
+                                    <div class="cnrflash-inner">
+                                        <span class="cnrflash-label">MAIS
+                                            <br>
+                                            POPULAR</span>
+                                    </div>
+                                </div>
+                            <% end %>
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><%= plan.description %></h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="the-price">
+                                    <h1><%= number_to_currency(plan.price, unit: 'R$ ') %><span class="subscript">/<%= plan.periodicity %></span></h1>
+                                    <small>1 mês FREE trial</small>
+                                </div>
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <%= plan.max_restaurants %> Restaurante(s)
+                                        </td>
+                                    </tr>
+                                    <tr class="active">
+                                        <td>
+                                            <%= plan.max_employees %> Funcionário(s)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <%= plan.max_items %> Items
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="panel-footer">
+                                <a href="#" class="btn btn-success" role="button">Sign Up</a></div>
+                        </div>
+                    </div>
+                <% end %>
+
+            </div>
+
+        </div>
+</div>
+

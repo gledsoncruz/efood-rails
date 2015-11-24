@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'dashboard#index'
   scope "/admin" do
     resources :users
@@ -11,6 +12,9 @@ Rails.application.routes.draw do
     resources :restaurants
     devise_for :users, path_prefix: 'auth'#, skip: [:registrations]
     resources :dashboard, only: [:index, :show]
+    resources :plans do
+      get 'view', on: :collection
+    end
 
 
 

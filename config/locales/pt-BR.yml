@@ -6,6 +6,7 @@ pt-BR:
          items: items
          categories: Categorias
          users: Usuários
+         plans: Planos
    errors:
       messages:
          not_saved: Não foi possível salvar
@@ -16,10 +17,31 @@ pt-BR:
                attributes:
                   email:
                      blank:  não pode ficar em branco
+                     already_confirmed: já confirmado
                   password:
                      blank:  não pode ficar em branco
+                  current_password:
+                     blank: não pode ficar em branco
    users:
       show:
          title: Usuário
       index:
          title: Lista de Usuários
+   restaurants:
+      index:
+         title: Lista de Restaurantes
+      restaurants:
+         attributes:
+            name: Nome
+            cnpj: CNPJ
+            owner: Dono
+            actions: Ações
+   plans:
+      view:
+         title: Planos
+
+
+
+
+
+

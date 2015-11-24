@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120014156) do
+ActiveRecord::Schema.define(version: 20151123214434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,21 @@ ActiveRecord::Schema.define(version: 20151120014156) do
   add_index "orders", ["item_id"], name: "index_orders_on_item_id", using: :btree
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
+  create_table "plans", force: :cascade do |t|
+    t.string   "description"
+    t.decimal  "price"
+    t.integer  "max_restaurants"
+    t.integer  "max_employees"
+    t.integer  "max_items"
+    t.string   "periodicity"
+    t.decimal  "discount"
+    t.boolean  "renew",           default: false
+    t.datetime "date_signature"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "recommended",     default: false
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
@@ -62,6 +77,7 @@ ActiveRecord::Schema.define(version: 20151120014156) do
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
     t.integer  "user_id"
+    t.integer  "plan_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -73,9 +89,22 @@ ActiveRecord::Schema.define(version: 20151120014156) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "admin",                  default: false
+    t.string   "name"
+    t.string   "cpf"
+    t.string   "cel"
+    t.boolean  "terms"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["plan_id"], name: "index_users_on_plan_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["user_id"], name: "index_users_on_user_id", using: :btree
 
@@ -84,5 +113,6 @@ ActiveRecord::Schema.define(version: 20151120014156) do
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
   add_foreign_key "restaurants", "users"
+  add_foreign_key "users", "plans"
   add_foreign_key "users", "users"
 end

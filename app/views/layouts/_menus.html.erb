@@ -1,5 +1,11 @@
-<nav class="navbar navbar-inverse" role="navigation">
+<% if not user_signed_in? %>
+	<img class="img-responsive img-circle img-thumbnail avatar" src="<%= image_path('logo.jpg') %>" />
+<% else %>
+	<img class="img-responsive img-circle img-thumbnail avatar" src="<%= current_user.avatar.url(:thumb) %>" />
+<% end %>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="padding-left:60px;">
 	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="container">
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 			<span class="sr-only">Toggle navigation</span>
@@ -20,12 +26,18 @@
 			  	<li><%= link_to(t('.categories'), categories_path)%> </li>
 			  	<% if current_user.try(:admin?) %>
 				  <li><%= link_to(t('.users'), users_path)%> </li>
+				  <li><%= link_to(t('.plans'), plans_path)%> </li>
 				<% end %>
+			<% else %>
+				<li><%= link_to(t('.plans'), view_plans_path)%> </li>
 		  	<% end %>
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
 			<% if user_signed_in? %>
+				<li>
+					<%= link_to current_user.name, edit_user_registration_path %>
+				</li>
 			  	<li>
 			  		<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
 			  	</li>
@@ -36,4 +48,5 @@
 			<% end %>
 		</ul>
 	</div><!-- /.navbar-collapse -->
+	</div>
 </nav>
