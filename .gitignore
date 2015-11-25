@@ -38,6 +38,7 @@ config/secrets.yml
 .rvmrc
 
 # if using bower-rails ignore default bower_components path bower.json files
+node_modules
 /vendor/assets/bower_components
 *.bowerrc
 bower.json
