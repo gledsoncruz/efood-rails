@@ -1,3 +1,7 @@
+source 'https://rails-assets.org' do
+  gem 'rails-assets-angular'
+end
+
 source 'https://rubygems.org'
 
 
