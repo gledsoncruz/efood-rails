@@ -15,6 +15,13 @@ pt-BR:
          models:
             user:
                attributes:
+                  name:
+                     blank: não pode ficar em branco
+                  cpf:
+                     blank: não pode ficar em branco
+                     invalid: inválido
+                  cel:
+                     blank: não pode ficar em branco
                   email:
                      blank:  não pode ficar em branco
                      already_confirmed: já confirmado

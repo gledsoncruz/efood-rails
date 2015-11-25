@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
+  def after_sign_in_path_for(resource)
+    dashboard_index_path
+  end
+
 protected
 
   def configure_permitted_parameters

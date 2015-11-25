@@ -13,10 +13,12 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 #gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
 gem 'devise-bootstrap-views'
 gem 'pundit'
 gem "paperclip", git: 'git://github.com/thoughtbot/paperclip.git'
+gem 'validates_cpf_cnpj'
+gem 'bower-rails'
 #gem 'jquery-datatables-rails', github: "rweng/jquery-datatables-rails", branch: "master"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby

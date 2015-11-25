@@ -54,6 +54,7 @@ pt-BR:
         sign_up: Inscrever-se
       user:
         updated: Alterado com sucesso
+        signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviado para seu endereço de e-mail. Por favor, abra o link para ativar sua conta."
     sessions:
       signed_in: "Logado com sucesso."
       signed_out: "Logout com sucesso."
