@@ -1,21 +1,67 @@
-<%= form_for(@plan) do |f| %>
-  <% if @plan.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
 
-      <ul>
-      <% @plan.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for(@plan, html: { role: "form" }) do |f| %>
+  <div class="row">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <div class="form-group">
+        <%= f.label :description %><br>
+        <%= f.text_field :description, class: "form-control", required: true %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+      <div class="form-group">
+        <%= f.label :price %><br>
+        <%= f.number_field :price, class: "form-control", required: true  %>
+      </div>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <div class="form-group">
+        <%= f.label :periodicity %><br>
+        <%= select_tag(:periodicity, options_for_select([['Semanal', 'Semanal'],['Mensal', 'Mensal'],['Anual', 'Anual']]), class: "form-control") %>
+        <!--%= f.text_field :periodicity, class: "form-control", required: true %-->
+      </div>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <div class="form-group">
+        <%= f.label :max_restaurants %><br>
+        <%= f.number_field :max_restaurants, class: "form-control", required: true %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+      <div class="form-group">
+        <%= f.label :max_employees %><br>
+        <%= f.number_field :max_employees, class: "form-control", required: true %>
+      </div>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+      <div class="form-group">
+        <%= f.label :max_items %><br>
+        <%= f.number_field :max_items, class: "form-control", required: true %>
+      </div>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+      <div class="form-group">
+        <%= f.label :discount %><br>
+        <%= f.number_field :discount, class: "form-control", required: true %>
+      </div>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <div class="form-group">
+        <%= f.label :recommended %><br>
+        <%= f.check_box :recommended, class: "checkbox" %>
+      </div>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <div class="form-group">
+        <%= f.label :active %><br>
+        <%= f.check_box :active, class: "checkbox" %>
+      </div>
+    </div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('.submit', :default => "Submit"), class: "btn btn-primary" %>
+    <%= link_to 'Back', plans_path, class: 'btn btn-primary' %>
   </div>
 <% end %>
+</div>

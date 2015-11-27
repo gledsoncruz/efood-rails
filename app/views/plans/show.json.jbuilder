@@ -1,1 +1,1 @@
-json.extract! @plan, :id, :description, :created_at, :updated_at
+json.extract! @plan, :id, :description, :created_at, :updated_at, :users

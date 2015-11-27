@@ -25,6 +25,7 @@ pt-BR:
                   email:
                      blank:  não pode ficar em branco
                      already_confirmed: já confirmado
+                     taken: já existe
                   password:
                      blank:  não pode ficar em branco
                   current_password:
@@ -46,6 +47,18 @@ pt-BR:
    plans:
       view:
          title: Planos
+      index:
+         title: Lista de Planos
+         search: Consultar
+         new: Novo Plano
+      show:
+         title: Detalhes
+         btn_edit: Editar Plano
+         btn_back: Voltar
+      edit:
+         title: Editar Plano
+      new:
+         title: Novo Plano
 
 
 

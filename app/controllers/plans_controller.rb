@@ -1,9 +1,9 @@
 class PlansController < ApplicationController
-  skip_before_filter :authenticate_user!
+  skip_before_filter :authenticate_user!, only: [:view]
   before_action :set_plan, only: [:show, :edit, :update, :destroy]
 
   def view
-    @plans = Plan.order(:price)
+    @plans = Plan.where(active: true).order(:price)
   end
 
   # GET /plans
@@ -75,6 +75,6 @@ class PlansController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def plan_params
-      params.require(:plan).permit(:description)
+      params.require(:plan).permit(:description, :price, :max_restaurants, :max_items, :periodicity, :max_employees, :discount, :recommended, :active)
     end
 end

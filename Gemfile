@@ -1,5 +1,7 @@
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
+  gem 'rails-assets-angular-route'
+  gem 'rails-assets-angular-resource'
 end
 
 source 'https://rubygems.org'
@@ -22,6 +24,7 @@ gem 'devise-bootstrap-views'
 gem 'pundit'
 gem "paperclip", git: 'git://github.com/thoughtbot/paperclip.git'
 gem 'validates_cpf_cnpj'
+gem 'html5_validators'
 #gem 'bower-rails'
 #gem 'jquery-datatables-rails', github: "rweng/jquery-datatables-rails", branch: "master"
 # See https://github.com/rails/execjs#readme for more supported runtimes

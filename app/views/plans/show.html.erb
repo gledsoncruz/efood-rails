@@ -1,9 +1,83 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><%= t('.title')%></h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row">
+                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7" ng-controller="PlanShowCtrl">
+                        <h3><strong>Assinantes: </strong><span class="label label-success">{{plan.users.length}}</span></h3>
+                        </br>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Cel</th>
+                                        <th class="text-center">Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-if="plan.users.length == 0">
+                                        <td colspan="4">Não existem usuários cadastrados para esse plano</td>
+                                    </tr>
+                                    <tr ng-show="plan.users.length" ng-repeat="user in plan.users">
+                                        <td>{{user.name}}</td>
+                                        <td>{{user.email}}</td>
+                                        <td>{{user.cel}}</td>
+                                        <td class="text-center">
+                                            <a href="/users/{{user.id}}">
+                                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                        <h3><strong>Plan: </strong><span class="label label-success"><%= @plan.description %></span></h3>
+                        </br>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+                                <tr>
+                                    <th>Price</th>
+                                    <td><%= number_to_currency(@plan.price, unit: 'R$ ')%></td>
+                                </tr>
+                                <tr>
+                                    <th>Periodicity</th>
+                                    <td><%= @plan.periodicity%></td>
+                                </tr>
+                                <tr>
+                                    <th>Max Restaurants</th>
+                                    <td><%= @plan.max_restaurants%></td>
+                                </tr>
+                                <tr>
+                                    <th>Max Employees</th>
+                                    <td><%= @plan.max_employees%></td>
+                                </tr>
+                                <tr>
+                                    <th>Max Items</th>
+                                    <td><%= @plan.max_items%></td>
+                                </tr>
+                                <tr>
+                                    <th>Discount</th>
+                                    <td><%= number_to_currency(@plan.discount, unit: 'R$ ')%></td>
+                                </tr>
+                                <tr>
+                                    <th>Recommended</th>
+                                    <td><%= @plan.recommended%></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @plan.description %>
-</p>
 
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
-<%= link_to 'Back', plans_path %>
+
