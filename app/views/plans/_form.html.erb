@@ -16,7 +16,7 @@
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
       <div class="form-group">
         <%= f.label :periodicity %><br>
-        <%= select_tag(:periodicity, options_for_select([['Semanal', 'Semanal'],['Mensal', 'Mensal'],['Anual', 'Anual']]), class: "form-control") %>
+        <%= f.select(:periodicity, Plan::PERIODICITIES, {}, {class: "form-control"}) %>
         <!--%= f.text_field :periodicity, class: "form-control", required: true %-->
       </div>
     </div>
