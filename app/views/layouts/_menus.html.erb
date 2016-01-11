@@ -23,10 +23,11 @@
 				<li><%= link_to(t('.dashboard'), dashboard_index_path)%> </li>
 				<li><%= link_to(t('.restaurants'), restaurants_path)%> </li>
 			  	<li><%= link_to(t('.items'), items_path)%> </li>
-			  	<li><%= link_to(t('.categories'), categories_path)%> </li>
+			  	<li><%= link_to(t('.employees'), employees_index_path)%> </li>
 			  	<% if current_user.try(:admin?) %>
 				  <li><%= link_to(t('.users'), users_path)%> </li>
 				  <li><%= link_to(t('.plans'), plans_path)%> </li>
+			  	<li><%= link_to(t('.categories'), categories_path)%> </li>
 				<% end %>
 			<% else %>
 				<li><%= link_to(t('.plans'), view_plans_path)%> </li>

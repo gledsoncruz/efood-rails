@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   root 'plans#view'
   scope "/admin" do
     resources :users
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
     resources :plans do
       get 'view', on: :collection
     end
+    get 'employees/index'
 
 
 
